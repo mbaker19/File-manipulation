@@ -1,0 +1,15 @@
+def word(file):
+     import os, stat
+     e= 0
+     d= os.listdir(".")
+     string= ''
+     for u in d:
+         if u == file:
+             file= file.split('.')
+             file[1]= '.docx'
+             string= string.join(file)
+             e= open(string, 'w')
+             os.chmod(string, stat.S_IRWXU)
+             d.append(string)
+             e.close()
+     return d
